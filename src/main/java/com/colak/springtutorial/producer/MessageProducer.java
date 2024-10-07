@@ -4,7 +4,7 @@ import org.springframework.integration.annotation.Gateway;
 import org.springframework.integration.annotation.MessagingGateway;
 
 @MessagingGateway
-public interface HelloMessageProducer {
+public interface MessageProducer {
 
     @Gateway(requestChannel = "inputChannel", replyChannel = "outputChannel")
     String sendMessage(String message);

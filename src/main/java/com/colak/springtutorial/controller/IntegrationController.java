@@ -1,6 +1,6 @@
 package com.colak.springtutorial.controller;
 
-import com.colak.springtutorial.producer.HelloMessageProducer;
+import com.colak.springtutorial.producer.MessageProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class IntegrationController {
 
-    private final HelloMessageProducer messageProducer;
+    private final MessageProducer messageProducer;
 
     // http://localhost:8080/api/test-integration
     @GetMapping("/test-integration")
