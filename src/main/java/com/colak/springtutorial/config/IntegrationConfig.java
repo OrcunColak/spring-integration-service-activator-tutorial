@@ -9,8 +9,8 @@ import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.handler.ServiceActivatingHandler;
 import org.springframework.messaging.MessageChannel;
 
-@Configuration
-@EnableIntegration
+// @Configuration
+// @EnableIntegration
 public class IntegrationConfig {
 
     @Bean
