@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xmlns:int-http="http://www.springframework.org/schema/integration/http"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/integration
+       http://www.springframework.org/schema/integration/spring-integration.xsd
+       http://www.springframework.org/schema/integration/http
+    https://www.springframework.org/schema/integration/http/spring-integration-http.xsd">
+
+    <!--
+    Define channels
+    Channels are the means of message communication in Spring Integration.
+    inputChannel, outputChannel, and outputExternalChannel are channels that will carry messages through the integration flow.
+    -->
+    <int:channel id="inputChannel"/>
+    <int:channel id="outputChannel"/>
+    <int:channel id="outputExternalChannel"/>
+
+    <!--
+    Define integration flow
+    Service Activator is used to handle messages coming into the inputChannel.
+    It delegates the message processing to a Spring bean (com.colak.springtutorial.service.ServiceHandler).
+    The result of this processing is sent to the outputChannel.
+    -->
+    <int:service-activator input-channel="inputChannel" output-channel="outputChannel">
+        <bean class="com.colak.springtutorial.service.ServiceHandler"/>
+    </int:service-activator>
+
+
+</beans>
