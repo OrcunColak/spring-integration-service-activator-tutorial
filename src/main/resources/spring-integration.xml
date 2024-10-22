@@ -11,13 +11,12 @@
     https://www.springframework.org/schema/integration/http/spring-integration-http.xsd">
 
     <!--
-    Define channels
+    Define channels.
     Channels are the means of message communication in Spring Integration.
-    inputChannel, outputChannel, and outputExternalChannel are channels that will carry messages through the integration flow.
+    inputChannel and outputChannel are channels that will carry messages through the integration flow.
     -->
     <int:channel id="inputChannel"/>
     <int:channel id="outputChannel"/>
-    <int:channel id="outputExternalChannel"/>
 
     <!--
     Define integration flow

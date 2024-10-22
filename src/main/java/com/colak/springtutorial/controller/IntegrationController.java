@@ -19,7 +19,8 @@ public class IntegrationController {
     @GetMapping("/test-integration")
     public ResponseEntity<Object> testIntegrationMessaging() {
         String message = "test";
-        return new ResponseEntity<>(messageProducer.sendMessage(message), HttpStatus.OK);
+        String result = messageProducer.sendMessage(message);
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
 }
